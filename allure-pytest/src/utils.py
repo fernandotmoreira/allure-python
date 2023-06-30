@@ -122,7 +122,7 @@ def allure_name(item, parameters):
 def allure_full_name(item: pytest.Item):
     package = allure_package(item)
     class_name = f".{item.parent.name}" if isinstance(item.parent, pytest.Class) else ''
-    test = item.originalname if isinstance(item, pytest.Function) else item.name.split("[")[0]
+    test = item.name
     full_name = f'{package}{class_name}#{test}'
     return full_name
 
